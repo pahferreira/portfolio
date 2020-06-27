@@ -6,12 +6,15 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
   ],
   settings: {
     react: {
       pragma: 'React',
-      version: 'detect'
-    }
-  }
-}
+      version: 'detect',
+    },
+  },
+  rules: {
+    semi: 'error',
+  },
+};

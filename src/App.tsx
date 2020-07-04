@@ -6,15 +6,18 @@ import store from './storage'
 import { ThemeProvider } from 'styled-components'
 import GlobalTheme from 'utils/GlobalTheme'
 import theme from 'utils/theme'
-import Navbar from 'components/Navbar'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalTheme />
-        <Navbar />
-        <Routes />
+        <Router>
+          <Switch>
+            <Routes />
+          </Switch>
+        </Router>
       </ThemeProvider>
     </Provider>
   )

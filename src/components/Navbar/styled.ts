@@ -12,7 +12,7 @@ type NavLinkProps = {
 }
 
 export const NavLink = styled(Link)<NavLinkProps>`
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSizes.text};
   color: ${({ active, theme }) =>
     active === 'true' ? theme.colors.secondary : theme.colors.primary};
   margin: 0px 20px;

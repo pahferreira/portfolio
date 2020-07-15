@@ -14,14 +14,14 @@ const RouterContainer: FC = () => {
               <PrivateRoute
                 exact
                 component={route.component}
-                path={route.path}
+                path={process.env.PUBLIC_URL + route.path}
               />
             )
           }
           return (
             <Route
               exact
-              path={route.path}
+              path={process.env.PUBLIC_URL + route.path}
               component={route.component}
               key={route.path}
             />

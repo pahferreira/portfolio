@@ -6,14 +6,14 @@ import store from './storage'
 import { ThemeProvider } from 'styled-components'
 import GlobalTheme from 'utils/GlobalTheme'
 import theme from 'utils/theme'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import { HashRouter as Router, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalTheme />
-        <Router>
+        <Router basename="/">
           <Switch>
             <Routes />
           </Switch>

@@ -12,7 +12,7 @@ const RouterContainer: FC = () => {
           if (route.private) {
             return (
               <PrivateRoute
-                exact
+                exact={route?.notExact ? false : true}
                 component={route.component}
                 path={process.env.PUBLIC_URL + route.path}
               />
@@ -20,7 +20,7 @@ const RouterContainer: FC = () => {
           }
           return (
             <Route
-              exact
+              exact={route?.notExact ? false : true}
               path={process.env.PUBLIC_URL + route.path}
               component={route.component}
               key={route.path}

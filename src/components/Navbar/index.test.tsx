@@ -13,19 +13,19 @@ describe('Navbar Tests', () => {
         label: 'Home',
       },
       {
-        url: 'about',
+        url: '/portfolio/about',
         label: 'About',
       },
       {
-        url: 'projects',
+        url: '/portfolio/projects',
         label: 'Projects',
       },
       {
-        url: 'skills',
+        url: '/portfolio/skills',
         label: 'Skills',
       },
       {
-        url: 'contact',
+        url: '/portfolio/contact',
         label: 'Contact',
       },
     ]
@@ -40,7 +40,7 @@ describe('Navbar Tests', () => {
     routes.forEach((route) => {
       expect(navbar.getByText(route.label)).toBeInstanceOf(HTMLAnchorElement)
       expect(navbar.getByText(route.label).getAttribute('href')).toEqual(
-        route.url.includes('/') ? route.url : `/${route.url}`
+        route.url
       )
     })
   })

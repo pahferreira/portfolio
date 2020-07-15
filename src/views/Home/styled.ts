@@ -8,25 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
 `
 
-export const Title = styled.p`
-  margin: 10px 0;
-  font-family: ${({ theme }) => theme.fontFamilies.nunito};
-  font-size: ${({ theme }) => theme.fontSizes.sectionTitle};
-  color: ${({ theme }) => theme.colors.secondary};
-  text-transform: uppercase;
-  text-align: center;
-  @media screen and (max-width: 600px) {
-    font-size: ${({ theme }) => theme.fontSizes.title};
-  }
-`
-
-export const Subtitle = styled.p`
-  margin: 0;
-  font-family: ${({ theme }) => theme.fontFamilies.lato};
-  font-size: ${({ theme }) => theme.fontSizes.subtitle};
-  color: ${({ theme }) => theme.colors.text};
-`
-
 const blink = keyframes`
   0% { opacity: 1 }
   49% { opacity: 1 }

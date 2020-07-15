@@ -8,23 +8,23 @@ type Option = {
 
 const OPTIONS = [
   {
-    url: '/',
+    url: '/portfolio',
     label: 'Home',
   },
   {
-    url: '/about',
+    url: 'about',
     label: 'About',
   },
   {
-    url: '/projects',
+    url: 'projects',
     label: 'Projects',
   },
   {
-    url: '/skills',
+    url: 'skills',
     label: 'Skills',
   },
   {
-    url: '/contact',
+    url: 'contact',
     label: 'Contact',
   },
 ]

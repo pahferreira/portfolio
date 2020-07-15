@@ -9,23 +9,23 @@ describe('Navbar Tests', () => {
   it('Render', () => {
     const routes = [
       {
-        url: '/',
+        url: '/portfolio',
         label: 'Home',
       },
       {
-        url: '/about',
+        url: 'about',
         label: 'About',
       },
       {
-        url: '/projects',
+        url: 'projects',
         label: 'Projects',
       },
       {
-        url: '/skills',
+        url: 'skills',
         label: 'Skills',
       },
       {
-        url: '/contact',
+        url: 'contact',
         label: 'Contact',
       },
     ]
@@ -40,7 +40,7 @@ describe('Navbar Tests', () => {
     routes.forEach((route) => {
       expect(navbar.getByText(route.label)).toBeInstanceOf(HTMLAnchorElement)
       expect(navbar.getByText(route.label).getAttribute('href')).toEqual(
-        route.url
+        route.url.includes('/') ? route.url : `/${route.url}`
       )
     })
   })

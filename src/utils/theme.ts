@@ -7,10 +7,10 @@ const theme = {
     lightPrimary: '#322F4D',
   },
   fontSizes: {
-    sectionTitle: '72px',
-    title: '32px',
-    subtitle: '20px',
-    text: '14px',
+    sectionTitle: '4.2rem',
+    title: '2rem',
+    subtitle: '1.2rem',
+    text: '1rem',
     small: '12px',
   },
   fontFamilies: {

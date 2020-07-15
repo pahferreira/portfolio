@@ -39,7 +39,9 @@ describe('Navbar Tests', () => {
     expect(navbar).toBeTruthy()
     routes.forEach((route) => {
       expect(navbar.getByText(route.label)).toBeInstanceOf(HTMLAnchorElement)
-      expect(navbar.getByText(route.label).getAttribute('href')).toEqual('bla')
+      expect(navbar.getByText(route.label).getAttribute('href')).toEqual(
+        route.url
+      )
     })
   })
 })

@@ -36,7 +36,9 @@ const Navbar: FC = () => {
         <NavLink
           key={option.label}
           to={option.url}
-          active={window.location.pathname === option.url ? 'true' : 'false'}>
+          active={
+            window.location.pathname.includes(option.url) ? 'true' : 'false'
+          }>
           {option.label}
         </NavLink>
       ))}

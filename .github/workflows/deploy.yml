@@ -18,7 +18,7 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Run Tests
-        run: npm tests
+        run: npm test
       - name: Create Build to Deployment
         run: npm run build
       - name: Deploy Page to Github Pages

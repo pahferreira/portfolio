@@ -1,30 +1,11 @@
 import styled, { keyframes } from 'styled-components'
 
 export const Container = styled.div`
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`
-
-export const Title = styled.p`
-  margin: 10px 0;
-  font-family: ${({ theme }) => theme.fontFamilies.nunito};
-  font-size: ${({ theme }) => theme.fontSizes.sectionTitle};
-  color: ${({ theme }) => theme.colors.secondary};
-  text-transform: uppercase;
-  text-align: center;
-  @media screen and (max-width: 600px) {
-    font-size: ${({ theme }) => theme.fontSizes.title};
-  }
-`
-
-export const Subtitle = styled.p`
-  margin: 0;
-  font-family: ${({ theme }) => theme.fontFamilies.lato};
-  font-size: ${({ theme }) => theme.fontSizes.subtitle};
-  color: ${({ theme }) => theme.colors.text};
 `
 
 const blink = keyframes`

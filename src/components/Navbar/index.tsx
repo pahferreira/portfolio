@@ -12,19 +12,19 @@ const OPTIONS = [
     label: 'Home',
   },
   {
-    url: 'about',
+    url: '/portfolio/about',
     label: 'About',
   },
   {
-    url: 'projects',
+    url: '/portfolio/projects',
     label: 'Projects',
   },
   {
-    url: 'skills',
+    url: '/portfolio/skills',
     label: 'Skills',
   },
   {
-    url: 'contact',
+    url: '/portfolio/contact',
     label: 'Contact',
   },
 ]

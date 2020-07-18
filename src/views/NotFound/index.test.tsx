@@ -3,10 +3,10 @@ import { render } from '@testing-library/react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import theme from 'utils/theme'
-import Home from './index'
-import { Container, Cursor } from './styled'
+import NotFound from './index'
+import { Container } from './styled'
 
-describe('Homepage Screen', () => {
+describe('NotFound Screen', () => {
   it('Component Container Render', () => {
     const container = render(
       <ThemeProvider theme={theme}>
@@ -16,21 +16,11 @@ describe('Homepage Screen', () => {
     expect(container).toBeTruthy()
   })
 
-  it('Component Cursor Render', () => {
-    const cursor = render(
-      <ThemeProvider theme={theme}>
-        <Cursor />
-      </ThemeProvider>
-    )
-    expect(cursor).toBeTruthy()
-    expect(cursor.container.firstChild).toBeInstanceOf(HTMLSpanElement)
-  })
-
   it('Render Screen', () => {
     const homepage = render(
       <ThemeProvider theme={theme}>
         <Router>
-          <Home />
+          <NotFound />
         </Router>
       </ThemeProvider>
     )

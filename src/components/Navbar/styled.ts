@@ -6,6 +6,7 @@ export const Container = styled(Grid)`
   background-color: ${({ theme }) => theme.colors.background};
   padding: 20px;
   height: 10vh;
+  position: absolute;
 `
 type NavLinkProps = {
   active: string

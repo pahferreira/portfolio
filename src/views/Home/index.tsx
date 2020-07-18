@@ -1,6 +1,8 @@
 import React, { FC, useState, useEffect } from 'react'
-import { Container, Subtitle, Title, Cursor } from './styled'
+import { Container, Cursor } from './styled'
 import Navbar from 'components/Navbar'
+import Title from 'components/Title'
+import Subtitle from 'components/Subtitle'
 
 const WORDS = ['Creative', 'Hard Worker', 'Frontend', 'React', 'React Native']
 const TYPING_DELAY = 150

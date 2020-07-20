@@ -6,33 +6,15 @@ type Option = {
   label: string
 }
 
-const OPTIONS = [
-  {
-    url: '/portfolio',
-    label: 'Home',
-  },
-  {
-    url: '/portfolio/about',
-    label: 'About',
-  },
-  {
-    url: '/portfolio/projects',
-    label: 'Projects',
-  },
-  {
-    url: '/portfolio/skills',
-    label: 'Skills',
-  },
-  {
-    url: '/portfolio/contact',
-    label: 'Contact',
-  },
-]
+type Props = {
+  options: Array<Option>
+}
 
-const Navbar: FC = () => {
+const Navbar: FC<Props> = (props: Props) => {
+  const { options } = props
   return (
     <Container container direction="row" justify="flex-end">
-      {OPTIONS.map((option: Option) => (
+      {options.map((option: Option) => (
         <NavLink
           key={option.label}
           to={option.url}

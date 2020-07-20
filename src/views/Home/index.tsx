@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react'
 import { Container, Cursor } from './styled'
-import Navbar from 'components/Navbar'
+import Header from 'components/Header'
 import Title from 'components/Title'
 import Subtitle from 'components/Subtitle'
 
@@ -46,7 +46,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Navbar />
+      <Header />
       <Container>
         <Subtitle>If you're searching for a</Subtitle>
         <Title>

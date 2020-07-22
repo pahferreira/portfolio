@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { Theme } from 'utils/theme'
 
 export const Container = styled.div`
   height: 100vh;
@@ -8,12 +9,12 @@ export const Container = styled.div`
   flex-direction: column;
 `
 
-const blink = keyframes`
-  0% { opacity: 1 }
-  49% { opacity: 1 }
-  50% { opacity: 0 }
-  99% { opacity: 0 }
-  100% { opacity: 1 }
+const blink = ({ theme }: { theme: Theme }) => keyframes`
+  0% { background-color: ${theme.colors.secondary} }
+  49% { background-color: ${theme.colors.secondary} }
+  50% { background-color: ${theme.colors.background} }
+  99% { background-color: ${theme.colors.background} }
+  100% { background-color: ${theme.colors.secondary} }
 `
 
 type CursorProps = {
@@ -27,5 +28,4 @@ export const Cursor = styled.span<CursorProps>`
   background-color: ${({ theme }) => theme.colors.secondary};
   margin-left: 5px;
   animation: ${blink} 1s infinite;
-  animation: ${({ typing }) => typing && 'none'};
 `

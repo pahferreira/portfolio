@@ -3,9 +3,9 @@ import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter as Router } from 'react-router-dom'
 import theme from 'utils/theme'
-import Navbar from './index'
+import Header from './index'
 
-describe('Navbar Tests', () => {
+describe('Header Tests', () => {
   it('Render', () => {
     const routes = [
       {
@@ -29,17 +29,17 @@ describe('Navbar Tests', () => {
         label: 'Contact',
       },
     ]
-    const navbar = render(
+    const header = render(
       <ThemeProvider theme={theme}>
         <Router>
-          <Navbar />
+          <Header />
         </Router>
       </ThemeProvider>
     )
-    expect(navbar).toBeTruthy()
+    expect(header).toBeTruthy()
     routes.forEach((route) => {
-      expect(navbar.getByText(route.label)).toBeInstanceOf(HTMLAnchorElement)
-      expect(navbar.getByText(route.label).getAttribute('href')).toEqual(
+      expect(header.getByText(route.label)).toBeInstanceOf(HTMLAnchorElement)
+      expect(header.getByText(route.label).getAttribute('href')).toEqual(
         route.url
       )
     })

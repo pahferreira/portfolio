@@ -7,6 +7,9 @@ const Title = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
   text-transform: uppercase;
   text-align: center;
+  @media screen and (max-width: 475px) {
+    text-align: left;
+  }
 `
 
 export default Title

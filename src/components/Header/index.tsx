@@ -3,11 +3,6 @@ import { useMediaQuery } from '@material-ui/core'
 import ResponsiveMenu from './ResponsiveMenu'
 import Navbar from './Navbar'
 
-type Option = {
-  url: string
-  label: string
-}
-
 const OPTIONS = [
   {
     url: '/portfolio',

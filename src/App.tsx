@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import 'assets/styles.css'
 import Routes from './routes'
 import { Provider } from 'react-redux'
 import store from './storage'

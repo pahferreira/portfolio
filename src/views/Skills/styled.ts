@@ -12,13 +12,15 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-  height: 80%;
+  height: 80vh;
   width: 90%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 `
 
 export const SectionsContainer = styled.div`
+  min-height: 70%;
   width: 100%;
   display: flex;
   flex-direction: row;

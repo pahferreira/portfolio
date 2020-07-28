@@ -14,7 +14,7 @@ const theme = {
     small: '12px',
   },
   fontFamilies: {
-    nunito: 'Nunito',
+    nunito: 'Nunito Sans',
     lato: 'Lato',
   },
 }

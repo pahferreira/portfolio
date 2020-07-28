@@ -12,11 +12,14 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  @media screen and (max-width: 960px) {
+    min-height: 90vh;
+  }
 `
 
 export const SectionsContainer = styled.div`

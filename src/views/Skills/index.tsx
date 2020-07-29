@@ -9,13 +9,9 @@ import { CSSTransition } from 'react-transition-group'
 
 const Skills: FC = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false)
-  const animationTimeout = useRef<number>(0)
 
   useEffect(() => {
-    animationTimeout.current = setTimeout(() => {
-      setTriggerAnimation(true)
-    }, 1000)
-    return () => {}
+    setTriggerAnimation(true)
   }, [])
 
   return (

@@ -1,6 +1,7 @@
 import Home from 'views/Home'
 import NotFound from 'views/NotFound'
 import Skills from 'views/Skills'
+import About from 'views/About'
 
 const paths = [
   {
@@ -10,6 +11,10 @@ const paths = [
   {
     path: '/skills',
     component: Skills,
+  },
+  {
+    path: '/about',
+    component: About,
   },
   {
     path: '*',

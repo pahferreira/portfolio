@@ -15,7 +15,7 @@ const TOOLS = [
 const Programming: FC = () => {
   return (
     <Section>
-      <Title>Programming</Title>
+      <Title textTransform="uppercase">Programming</Title>
       <Text>
         I really like to code things that make people's life easier and happier.
         Give life to anyone's idea.

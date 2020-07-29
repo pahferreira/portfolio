@@ -1,27 +1,5 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  @media screen and (max-width: 960px) {
-    padding: 15% 0 5% 0;
-  }
-`
-
-export const Content = styled.div`
-  min-height: 80vh;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  @media screen and (max-width: 960px) {
-    min-height: 90vh;
-  }
-`
-
 export const SectionsContainer = styled.div`
   min-height: 70%;
   width: 100%;

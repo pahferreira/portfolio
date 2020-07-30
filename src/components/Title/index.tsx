@@ -14,6 +14,13 @@ const Title = styled.p<TitleProps>`
   text-align: center;
   @media screen and (max-width: 475px) {
     text-align: left;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  @media screen and (max-width: 400px) {
+    text-align: left;
+    font-size: 2rem;
+    line-height: 3rem;
   }
 `
 

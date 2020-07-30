@@ -10,6 +10,7 @@ const Text = styled.p<TextProps>`
   color: ${({ theme }) => theme.colors.text};
   text-align: ${({ align }) => (align ? align : 'center')};
   margin: 2px 0;
+  letter-spacing: 1px;
   @media screen and (max-width: 475px) {
     text-align: left;
   }

@@ -47,4 +47,5 @@ export const Subtitle = styled.p`
   font-family: ${({ theme }) => theme.fontFamilies.lato};
   font-size: ${({ theme }) => theme.fontSizes.subtitle};
   color: ${({ theme }) => theme.colors.text};
+  text-align: center;
 `

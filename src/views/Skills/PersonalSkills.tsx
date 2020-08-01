@@ -10,7 +10,7 @@ const TOOLS = ['Slack', 'Zoom', 'Google Meets', 'Spotify']
 const Programming: FC = () => {
   return (
     <Section>
-      <Title>Personal Skills</Title>
+      <Title textTransform="uppercase">Personal Skills</Title>
       <Text>
         My friends says I'm can jump easily between fun and work, making any
         activity painless and enjoyable.

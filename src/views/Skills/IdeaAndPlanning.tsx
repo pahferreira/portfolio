@@ -10,7 +10,7 @@ const TOOLS = ['Project Management Tools', 'Figma', 'Adobe XD', 'Pen & Papper']
 const IdeaAndPlanning: FC = () => {
   return (
     <Section>
-      <Title>Idea &amp; Planning</Title>
+      <Title textTransform="uppercase">Idea &amp; Planning</Title>
       <Text>
         I value conceiving the idea and make part of the plan creation to
         achieve it in the most effective way.

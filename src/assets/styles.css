@@ -7,3 +7,23 @@
   transform: translateY(0);
   transition: opacity 300ms, transform 500ms;
 }
+
+.appear-enter {
+  opacity: 0;
+}
+
+.appear-enter-active {
+  opacity: 1;
+  transition: opacity 800ms;
+}
+
+.appear-box-enter {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.appear-box-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 500ms;
+}

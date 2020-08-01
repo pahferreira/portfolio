@@ -4,31 +4,12 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import theme from 'utils/theme'
 import Skills from './index'
-import { Container, Content, SectionsContainer, Section } from './styled'
+import { SectionsContainer, Section } from './styled'
 import IdeaAndPlanning from './IdeaAndPlanning'
 import Programming from './Programming'
 import PersonalSkils from './PersonalSkills'
 
 describe('Skills Screen', () => {
-  it('Component Container Render', () => {
-    const container = render(
-      <ThemeProvider theme={theme}>
-        <Container />
-      </ThemeProvider>
-    )
-    expect(container).toBeTruthy()
-  })
-
-  it('Component Content Render', () => {
-    const content = render(
-      <ThemeProvider theme={theme}>
-        <Content />
-      </ThemeProvider>
-    )
-    expect(content).toBeTruthy()
-    expect(content.container).toBeInstanceOf(HTMLDivElement)
-  })
-
   it('Component SectionsContainer Render', () => {
     const content = render(
       <ThemeProvider theme={theme}>

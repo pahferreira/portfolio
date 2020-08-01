@@ -12,6 +12,6 @@ describe('Content Component', () => {
       </ThemeProvider>
     )
     expect(content).toBeTruthy()
-    expect(content).toBeInstanceOf(HTMLDivElement)
+    expect(content.container).toBeInstanceOf(HTMLDivElement)
   })
 })

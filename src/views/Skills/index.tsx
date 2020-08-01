@@ -7,7 +7,7 @@ import SectionTitle from 'components/SectionTitle'
 import IdeaAndPlanning from './IdeaAndPlanning'
 import Programming from './Programming'
 import PersonalSkills from './PersonalSkills'
-import { CSSTransition } from 'react-transition-group'
+import FadeAnimation from 'components/FadeAnimation'
 
 const Skills: FC = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false)
@@ -22,17 +22,13 @@ const Skills: FC = () => {
       <Container>
         <Content>
           <SectionTitle>Skills</SectionTitle>
-          <CSSTransition
-            in={triggerAnimation}
-            classNames="fade"
-            timeout={500}
-            unmountOnExit>
+          <FadeAnimation activateAnimation={triggerAnimation}>
             <SectionsContainer>
               <IdeaAndPlanning />
               <Programming />
               <PersonalSkills />
             </SectionsContainer>
-          </CSSTransition>
+          </FadeAnimation>
         </Content>
       </Container>
     </>

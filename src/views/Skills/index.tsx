@@ -2,7 +2,6 @@ import React, { FC, useState, useEffect } from 'react'
 import { SectionsContainer } from './styled'
 import Container from 'components/Container'
 import Content from 'components/Content'
-import Header from 'components/Header'
 import SectionTitle from 'components/SectionTitle'
 import IdeaAndPlanning from './IdeaAndPlanning'
 import Programming from './Programming'
@@ -17,21 +16,18 @@ const Skills: FC = () => {
   }, [])
 
   return (
-    <>
-      <Header />
-      <Container>
-        <Content>
-          <SectionTitle>Skills</SectionTitle>
-          <FadeAnimation activateAnimation={triggerAnimation}>
-            <SectionsContainer>
-              <IdeaAndPlanning />
-              <Programming />
-              <PersonalSkills />
-            </SectionsContainer>
-          </FadeAnimation>
-        </Content>
-      </Container>
-    </>
+    <Container>
+      <Content>
+        <SectionTitle>Skills</SectionTitle>
+        <FadeAnimation activateAnimation={triggerAnimation}>
+          <SectionsContainer>
+            <IdeaAndPlanning />
+            <Programming />
+            <PersonalSkills />
+          </SectionsContainer>
+        </FadeAnimation>
+      </Content>
+    </Container>
   )
 }
 

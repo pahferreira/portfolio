@@ -9,7 +9,6 @@ import GlobalTheme from 'utils/GlobalTheme'
 import theme from 'utils/theme'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Header from 'components/Header'
-import Footer from 'components/Footer'
 
 const App = () => {
   return (
@@ -19,7 +18,6 @@ const App = () => {
         <Router>
           <Header />
           <Routes />
-          <Footer />
         </Router>
       </ThemeProvider>
     </Provider>

@@ -5,16 +5,20 @@ import SectionTitle from 'components/SectionTitle'
 import { useMediaQuery } from '@material-ui/core'
 import Desktop from './Desktop'
 import Mobile from './Mobile'
+import Footer from 'components/Footer'
 
 const About: FC = () => {
   const matches = useMediaQuery('(max-width: 960px)')
   return (
-    <Container>
-      <Content>
-        <SectionTitle>About Me</SectionTitle>
-        {matches ? <Mobile /> : <Desktop />}
-      </Content>
-    </Container>
+    <>
+      <Container>
+        <Content>
+          <SectionTitle>About Me</SectionTitle>
+          {matches ? <Mobile /> : <Desktop />}
+        </Content>
+      </Container>
+      <Footer />
+    </>
   )
 }
 

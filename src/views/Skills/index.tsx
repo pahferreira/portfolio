@@ -7,6 +7,7 @@ import IdeaAndPlanning from './IdeaAndPlanning'
 import Programming from './Programming'
 import PersonalSkills from './PersonalSkills'
 import FadeAnimation from 'components/FadeAnimation'
+import Footer from 'components/Footer'
 
 const Skills: FC = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false)
@@ -16,18 +17,21 @@ const Skills: FC = () => {
   }, [])
 
   return (
-    <Container>
-      <Content>
-        <SectionTitle>Skills</SectionTitle>
-        <FadeAnimation activateAnimation={triggerAnimation}>
-          <SectionsContainer>
-            <IdeaAndPlanning />
-            <Programming />
-            <PersonalSkills />
-          </SectionsContainer>
-        </FadeAnimation>
-      </Content>
-    </Container>
+    <>
+      <Container>
+        <Content>
+          <SectionTitle>Skills</SectionTitle>
+          <FadeAnimation activateAnimation={triggerAnimation}>
+            <SectionsContainer>
+              <IdeaAndPlanning />
+              <Programming />
+              <PersonalSkills />
+            </SectionsContainer>
+          </FadeAnimation>
+        </Content>
+      </Container>
+      <Footer />
+    </>
   )
 }
 

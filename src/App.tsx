@@ -7,7 +7,9 @@ import store from './storage'
 import { ThemeProvider } from 'styled-components'
 import GlobalTheme from 'utils/GlobalTheme'
 import theme from 'utils/theme'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 const App = () => {
   return (
@@ -15,9 +17,9 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <GlobalTheme />
         <Router>
-          <Switch>
-            <Routes />
-          </Switch>
+          <Header />
+          <Routes />
+          <Footer />
         </Router>
       </ThemeProvider>
     </Provider>

@@ -20,10 +20,6 @@ const OPTIONS = [
     url: '/portfolio/skills',
     label: 'Skills',
   },
-  {
-    url: '/portfolio/contact',
-    label: 'Contact',
-  },
 ]
 
 const Header: FC = () => {

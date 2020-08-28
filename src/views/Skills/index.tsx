@@ -7,7 +7,6 @@ import IdeaAndPlanning from './IdeaAndPlanning'
 import Programming from './Programming'
 import PersonalSkills from './PersonalSkills'
 import FadeAnimation from 'components/FadeAnimation'
-import Footer from 'components/Footer'
 
 const Skills: FC = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false)
@@ -30,7 +29,6 @@ const Skills: FC = () => {
           </FadeAnimation>
         </Content>
       </Container>
-      <Footer />
     </>
   )
 }

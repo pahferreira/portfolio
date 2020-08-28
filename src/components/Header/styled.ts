@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Grid } from '@material-ui/core'
 import { IconButton } from '@material-ui/core'
 
 export const Container = styled.div`

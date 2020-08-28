@@ -26,7 +26,7 @@ export const IconsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80px;
+  width: 100px;
   align-items: center;
 `
 

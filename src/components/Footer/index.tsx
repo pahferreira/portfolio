@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <Container>
       <Text>pah.webdev@gmail.com</Text>
-      <Text alignSelf>Writed and Coded by myself :&#41;</Text>
       <IconsContainer>
         <Link href="https://github.com/pahferreira" target="blank">
           <AiFillGithub size={22} color="#D4D4D4" />

@@ -24,10 +24,6 @@ describe('Header Tests', () => {
         url: '/portfolio/skills',
         label: 'Skills',
       },
-      {
-        url: '/portfolio/contact',
-        label: 'Contact',
-      },
     ]
     const header = render(
       <ThemeProvider theme={theme}>

@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import Header from 'components/Header'
 import Container from 'components/Container'
 import Content from 'components/Content'
 import SectionTitle from 'components/SectionTitle'
@@ -11,7 +10,6 @@ const About: FC = () => {
   const matches = useMediaQuery('(max-width: 960px)')
   return (
     <>
-      <Header />
       <Container>
         <Content>
           <SectionTitle>About Me</SectionTitle>

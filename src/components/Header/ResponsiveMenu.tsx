@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react'
 import { MenuButton, MenuContainer, MenuOption } from './styled'
 import MenuIcon from '@material-ui/icons/Menu'
+import { useLocation } from 'react-router-dom'
 
 type Option = {
   url: string
@@ -14,6 +15,7 @@ type Props = {
 const ResponsiveMenu: FC<Props> = (props: Props) => {
   const { options } = props
   const [open, setOpen] = useState<boolean>(false)
+  const location = useLocation()
 
   return (
     <>
@@ -25,7 +27,7 @@ const ResponsiveMenu: FC<Props> = (props: Props) => {
           <MenuOption
             key={option.label}
             to={option.url}
-            active={window.location.pathname === option.url ? 'true' : 'false'}>
+            active={location.pathname === option.url ? 'true' : 'false'}>
             {option.label}
           </MenuOption>
         ))}

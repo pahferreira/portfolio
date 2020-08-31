@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Grid } from '@material-ui/core'
 import { IconButton } from '@material-ui/core'
 
-export const Container = styled(Grid)`
+export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   padding: 20px;
   height: 10vh;
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `
 type NavLinkProps = {
   active: string

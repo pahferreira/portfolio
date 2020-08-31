@@ -1,6 +1,5 @@
 import React, { FC, useState, useEffect } from 'react'
 import { Container, Cursor, Title, Subtitle } from './styled'
-import Header from 'components/Header'
 
 const WORDS = ['Creative', 'Hard Worker', 'Frontend', 'React', 'React Native']
 const TYPING_DELAY = 150
@@ -43,17 +42,14 @@ const Home: FC = () => {
   }, [activeWordIndex])
 
   return (
-    <>
-      <Header />
-      <Container>
-        <Subtitle>If you're searching for a</Subtitle>
-        <Title>
-          {wordToShow}
-          <Cursor typing={isTyping}>&nbsp;</Cursor>
-        </Title>
-        <Subtitle>Developer. You came to the right place!</Subtitle>
-      </Container>
-    </>
+    <Container>
+      <Subtitle>If you're searching for a</Subtitle>
+      <Title>
+        {wordToShow}
+        <Cursor typing={isTyping}>&nbsp;</Cursor>
+      </Title>
+      <Subtitle>Developer. You came to the right place!</Subtitle>
+    </Container>
   )
 }
 

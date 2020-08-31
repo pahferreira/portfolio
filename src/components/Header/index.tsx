@@ -2,33 +2,18 @@ import React, { FC } from 'react'
 import { useMediaQuery } from '@material-ui/core'
 import ResponsiveMenu from './ResponsiveMenu'
 import Navbar from './Navbar'
-
-const OPTIONS = [
-  {
-    url: '/portfolio',
-    label: 'Home',
-  },
-  {
-    url: '/portfolio/about',
-    label: 'About',
-  },
-  {
-    url: '/portfolio/projects',
-    label: 'Projects',
-  },
-  {
-    url: '/portfolio/skills',
-    label: 'Skills',
-  },
-]
+import { useSelector } from 'react-redux'
+import { TStore } from 'types/storage'
+import { TState as TLayoutState } from 'types/layout'
 
 const Header: FC = () => {
+  const { header } = useSelector<TStore, TLayoutState>((state) => state.layout)
   const matches = useMediaQuery('(max-width: 475px)')
 
   return matches ? (
-    <ResponsiveMenu options={OPTIONS} />
+    <ResponsiveMenu options={header.link} />
   ) : (
-    <Navbar options={OPTIONS} />
+    <Navbar options={header.link} />
   )
 }
 

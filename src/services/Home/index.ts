@@ -1,6 +1,7 @@
 import API from 'services/API'
+import { TState as THomeState } from 'types/home'
 
-const getHomeContent = async () => {
+export const getHomeContent = async (): Promise<THomeState | undefined> => {
   try {
     const { data } = await API.post('/graphql', {
       query: `
@@ -16,7 +17,7 @@ const getHomeContent = async () => {
       `,
     })
     return data.data.home
-  } catch (error) {}
+  } catch (error) {
+    return
+  }
 }
-
-export default { getHomeContent }

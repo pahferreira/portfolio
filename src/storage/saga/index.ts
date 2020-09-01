@@ -4,7 +4,8 @@ import { all, fork } from 'redux-saga/effects'
 import authSaga from './auth'
 import layoutSaga from './layout'
 import homeSaga from './home'
+import aboutSaga from './about'
 
 export default function* rootSaga() {
-  yield all([fork(authSaga), fork(layoutSaga), fork(homeSaga)])
+  yield all([fork(authSaga), fork(layoutSaga), fork(homeSaga), fork(aboutSaga)])
 }

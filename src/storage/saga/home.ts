@@ -1,11 +1,11 @@
 import { all, call, takeLatest, put } from 'redux-saga/effects'
 import { Types, request, fulfill, success } from '../ducks/home'
-import Home from 'services/Home'
+import { getHomeContent } from 'services/Home'
 
 function* loadHomeContent() {
   yield put(request())
   try {
-    const data = yield call(Home.getHomeContent)
+    const data = yield call(getHomeContent)
     if (data) {
       yield put(success(data))
     }

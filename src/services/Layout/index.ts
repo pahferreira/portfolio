@@ -2,7 +2,7 @@ import API from 'services/API'
 import { parseLayoutData } from './parser'
 import { TState as TLayoutState } from 'types/layout'
 
-const getLayout = async (): Promise<TLayoutState | undefined> => {
+export const getLayout = async (): Promise<TLayoutState | undefined> => {
   try {
     const { data } = await API.post('/graphql', {
       query: `
@@ -34,5 +34,3 @@ const getLayout = async (): Promise<TLayoutState | undefined> => {
     return
   }
 }
-
-export default { getLayout }

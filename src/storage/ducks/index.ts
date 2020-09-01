@@ -5,11 +5,13 @@ import { EGlobalActions } from 'enums/actions'
 import auth from './auth'
 import layout from './layout'
 import home from './home'
+import about from './about'
 
 const appReducer = combineReducers<TStore | undefined, TAction>({
   auth,
   layout,
   home,
+  about,
 })
 
 export default (state: TStore, action: TAction) => {

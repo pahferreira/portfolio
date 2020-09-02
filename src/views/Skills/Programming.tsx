@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Section } from './styled'
+import { Container } from './styled'
 import Title from 'components/Title'
 import Subtitle from 'components/Subtitle'
 import Text from 'components/Text'
@@ -14,7 +14,7 @@ const TOOLS = [
 
 const Programming: FC = () => {
   return (
-    <Section>
+    <Container>
       <Title textTransform="uppercase">Programming</Title>
       <Text>
         I really like to code things that make people's life easier and happier.
@@ -29,7 +29,7 @@ const Programming: FC = () => {
       {TOOLS.map((tool, index) => (
         <Text key={index}>{tool}</Text>
       ))}
-    </Section>
+    </Container>
   )
 }
 

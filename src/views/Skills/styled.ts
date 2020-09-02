@@ -12,7 +12,7 @@ export const SectionsContainer = styled.div`
   }
 `
 
-export const Section = styled.div`
+export const Container = styled.div`
   width: 33%;
   max-width: 400px;
   display: flex;

@@ -3,10 +3,10 @@ import { TState } from 'types/about'
 
 // Action Types
 export const Types = {
-  TRIGGER: 'HOME/TRIGGER',
-  REQUEST: 'HOME/REQUEST',
-  SUCCESS: 'HOME/SUCCESS',
-  FULFILL: 'HOME/FULFILL',
+  TRIGGER: 'ABOUT/TRIGGER',
+  REQUEST: 'ABOUT/REQUEST',
+  SUCCESS: 'ABOUT/SUCCESS',
+  FULFILL: 'ABOUT/FULFILL',
 }
 
 // Initial State

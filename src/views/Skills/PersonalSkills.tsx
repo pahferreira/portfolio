@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Section } from './styled'
+import { Container } from './styled'
 import Title from 'components/Title'
 import Subtitle from 'components/Subtitle'
 import Text from 'components/Text'
@@ -9,7 +9,7 @@ const TOOLS = ['Slack', 'Zoom', 'Google Meets', 'Spotify']
 
 const Programming: FC = () => {
   return (
-    <Section>
+    <Container>
       <Title textTransform="uppercase">Personal Skills</Title>
       <Text>
         My friends says I'm can jump easily between fun and work, making any
@@ -24,7 +24,7 @@ const Programming: FC = () => {
         <Text key={index}>{tool}</Text>
       ))}
       <Note>(A good song to hype!)</Note>
-    </Section>
+    </Container>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Section } from './styled'
+import { Container } from './styled'
 import Title from 'components/Title'
 import Subtitle from 'components/Subtitle'
 import Text from 'components/Text'
@@ -9,7 +9,7 @@ const TOOLS = ['Project Management Tools', 'Figma', 'Adobe XD', 'Pen & Papper']
 
 const IdeaAndPlanning: FC = () => {
   return (
-    <Section>
+    <Container>
       <Title textTransform="uppercase">Idea &amp; Planning</Title>
       <Text>
         I value conceiving the idea and make part of the plan creation to
@@ -24,7 +24,7 @@ const IdeaAndPlanning: FC = () => {
         <Text key={index}>{tool}</Text>
       ))}
       <Note>(Always with it for insights)</Note>
-    </Section>
+    </Container>
   )
 }
 

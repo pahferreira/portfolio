@@ -11,7 +11,7 @@ export const Types = {
 
 // Initial State
 const initialState: TState = {
-  section_title: 'Skills',
+  section_title: '',
   sections: [],
 }
 

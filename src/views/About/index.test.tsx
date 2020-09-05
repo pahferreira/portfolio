@@ -40,7 +40,7 @@ describe('About Me Screen', () => {
   it('Component Image Render', () => {
     const image = render(
       <ThemeProvider theme={theme}>
-        <Image />
+        <Image image="" />
       </ThemeProvider>
     )
     expect(image).toBeTruthy()
@@ -70,7 +70,7 @@ describe('About Me Screen', () => {
   it('Component MobileImage Render', () => {
     const mobileImage = render(
       <ThemeProvider theme={theme}>
-        <MobileImage />
+        <MobileImage image="" />
       </ThemeProvider>
     )
     expect(mobileImage).toBeTruthy()
@@ -101,7 +101,7 @@ describe('About Me Screen', () => {
     const mobileScreen = render(
       <ThemeProvider theme={theme}>
         <Router>
-          <Mobile />
+          <Mobile greeting="Test" description="Test" title="Test" image="" />
         </Router>
       </ThemeProvider>
     )
@@ -112,7 +112,7 @@ describe('About Me Screen', () => {
     const desktopScreen = render(
       <ThemeProvider theme={theme}>
         <Router>
-          <Desktop />
+          <Desktop greeting="Test" description="Test" title="Test" image="" />
         </Router>
       </ThemeProvider>
     )

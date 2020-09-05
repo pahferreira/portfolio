@@ -3,21 +3,21 @@ import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter as Router } from 'react-router-dom'
 import theme from 'utils/theme'
-import Header from './index'
+import Footer from './index'
 import { Provider } from 'react-redux'
 import store from 'storage'
 
-describe('Header Tests', () => {
+describe('Footer Tests', () => {
   it('Render', () => {
-    const header = render(
+    const footer = render(
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <Router>
-            <Header />
+            <Footer />
           </Router>
         </ThemeProvider>
       </Provider>
     )
-    expect(header).toBeTruthy()
+    expect(footer).toBeTruthy()
   })
 })

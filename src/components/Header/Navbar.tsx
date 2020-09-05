@@ -20,8 +20,12 @@ const Navbar: FC<Props> = (props: Props) => {
       {options.map((option: Option) => (
         <NavLink
           key={option.label}
-          to={option.url}
-          active={location.pathname === option.url ? 'true' : 'false'}>
+          to={process.env.PUBLIC_URL + option.url}
+          active={
+            location.pathname === process.env.PUBLIC_URL + option.url
+              ? 'true'
+              : 'false'
+          }>
           {option.label}
         </NavLink>
       ))}

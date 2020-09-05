@@ -5,7 +5,7 @@ type TitleProps = {
 }
 
 const Title = styled.p<TitleProps>`
-  margin: 20px 0;
+  margin: 10px 0;
   font-family: ${({ theme }) => theme.fontFamilies.nunito};
   font-size: ${({ theme }) => theme.fontSizes.title};
   color: ${({ theme }) => theme.colors.secondary};

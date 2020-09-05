@@ -1,10 +1,17 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import PrivateRoute from '../utils/PrivateRoute'
+import PrivateRoute from 'utils/PrivateRoute'
 import paths from './paths'
-import TRoute from '../types/router'
+import TRoute from 'types/router'
+import { trigger } from 'storage/ducks/layout'
+import { useDispatch } from 'react-redux'
 
 const RouterContainer: FC = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(trigger())
+  }, [dispatch])
+
   return (
     <Switch>
       {paths.map((route: TRoute) => {

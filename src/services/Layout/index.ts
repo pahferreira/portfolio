@@ -1,5 +1,4 @@
 import API from 'services/API'
-import { parseLayoutData } from './parser'
 import { TState as TLayoutState } from 'types/layout'
 
 export const getLayout = async (): Promise<TLayoutState | undefined> => {
@@ -29,7 +28,7 @@ export const getLayout = async (): Promise<TLayoutState | undefined> => {
       }
       `,
     })
-    return parseLayoutData(data.data)
+    return data.data.layout
   } catch (error) {
     return
   }

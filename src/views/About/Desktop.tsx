@@ -20,7 +20,6 @@ const Desktop: FC<Props> = (props: Props) => {
     setTriggerAnimation(true)
   }, [])
 
-  console.log(image)
   return (
     <Section>
       <CSSTransition

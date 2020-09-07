@@ -23,7 +23,7 @@ const IdeaAndPlanning: FC<Props> = (props: Props) => {
       {section.tools.map((tool: TTool, index: number) => (
         <>
           <Text key={index}>{tool.value}</Text>
-          {tool.note && <Note>(Always with it for insights)</Note>}
+          {tool.note && <Note>({tool?.note})</Note>}
         </>
       ))}
     </Container>

@@ -1,7 +1,9 @@
 import API from 'services/API'
 import { TState as TLayoutState } from 'types/layout'
 
-export const getLayout = async (): Promise<TLayoutState | undefined> => {
+export const getLayout = async (
+  currentLanguage: string
+): Promise<TLayoutState | undefined> => {
   try {
     const { data } = await API.post('/graphql', {
       query: `
@@ -10,11 +12,11 @@ export const getLayout = async (): Promise<TLayoutState | undefined> => {
           header {
             link {
               url
-              label: label_pt
+              label: label_${currentLanguage}
             }
             language {
               value
-              label: label_pt
+              label: label_${currentLanguage}
             }
           }
           footer {

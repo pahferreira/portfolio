@@ -9,15 +9,17 @@ import { TStore } from 'types/storage'
 import { TState as TSkillsState } from 'types/skills'
 import { trigger } from 'storage/ducks/skills'
 import Section from './Section'
+import { useLanguage } from 'hooks/useLanguage'
 
 const Skills: FC = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false)
   const dispatch = useDispatch()
   const skills = useSelector<TStore, TSkillsState>((state) => state.skills)
+  const { currentLanguage } = useLanguage()
 
   useEffect(() => {
-    dispatch(trigger())
-  }, [dispatch])
+    dispatch(trigger(currentLanguage))
+  }, [dispatch, currentLanguage])
 
   useEffect(() => {
     if (skills.sections.length > 0) {

@@ -47,7 +47,7 @@ type MenuContainerProps = {
 
 export const MenuOverlay = styled.div<MenuContainerProps>`
   width: 100%;
-  z-index: 1;
+  z-index: ${({ open }) => (open ? 1 : -1)};
   height: 107vh;
   position: absolute !important;
   background-color: rgba(17, 17, 17, 0.6);

@@ -7,6 +7,7 @@ import layout from './layout'
 import home from './home'
 import about from './about'
 import skills from './skills'
+import notFound from './notFound'
 
 const appReducer = combineReducers<TStore | undefined, TAction>({
   auth,
@@ -14,6 +15,7 @@ const appReducer = combineReducers<TStore | undefined, TAction>({
   home,
   about,
   skills,
+  notFound,
 })
 
 export default (state: TStore, action: TAction) => {

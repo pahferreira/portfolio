@@ -4,6 +4,7 @@ import { TState as TLayoutState } from 'types/layout'
 import { TState as THomeState } from 'types/home'
 import { TState as TAboutState } from 'types/about'
 import { TState as TSkillsState } from 'types/skills'
+import { TState as TNotFoundState } from 'types/notFound'
 
 export type TStore = {
   auth: TAuthState
@@ -11,6 +12,7 @@ export type TStore = {
   home: THomeState
   about: TAboutState
   skills: TSkillsState
+  notFound: TNotFoundState
 }
 
 export type TAction = {

@@ -9,6 +9,7 @@ import {
 import { useLocation } from 'react-router-dom'
 import { TLanguage, TLink } from 'types/layout'
 import { MdLanguage } from 'react-icons/md'
+import { useLanguage } from 'hooks/useLanguage'
 
 type Props = {
   options: Array<TLink>
@@ -18,6 +19,10 @@ type Props = {
 const Navbar: FC<Props> = (props: Props) => {
   const { options, languages } = props
   const location = useLocation()
+  const { currentLanguage, setCurrentLanguage } = useLanguage()
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
+    setCurrentLanguage(e.target.value)
 
   return (
     <Container>
@@ -37,7 +42,9 @@ const Navbar: FC<Props> = (props: Props) => {
       </NavContainer>
       <LanguageSelectorContainer>
         <MdLanguage size={18} color="#5E548E" />
-        <LanguageSelector>
+        <LanguageSelector
+          value={currentLanguage}
+          onChange={handleLanguageChange}>
           {languages.map((language) => (
             <option key={language.value} value={language.value}>
               {language.label}

@@ -75,10 +75,14 @@ export const MobileImage = styled.div<ImageProps>`
     width: 50%;
     margin-right: 10%;
   }
+  @media screen and (max-width: 430px) {
+    width: 150px;
+    height: 150px;
+    margin-right: 5%;
+  }
   @media screen and (max-width: 400px) {
     width: 130px;
     height: 130px;
-    margin-right: 5%;
   }
 `
 

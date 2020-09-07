@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { TStore } from 'types/storage'
 import { TState as THomeState } from 'types/home'
 import { trigger } from 'storage/ducks/home'
+import { useLanguage } from 'hooks/useLanguage'
 
 const TYPING_DELAY = 150
 const ERASING_DELAY = 100
@@ -15,6 +16,7 @@ const sleep = (milliseconds: number) => {
 }
 
 const Home: FC = () => {
+  const { currentLanguage } = useLanguage()
   const [activeWordIndex, setActiveWordIndex] = useState<number>(0)
   const [wordToShow, setwordToShow] = useState<string>('')
   const [isTyping, setIsTyping] = useState(false)
@@ -24,8 +26,8 @@ const Home: FC = () => {
   const [triggerEffect, setTriggerEffect] = useState(true)
 
   useEffect(() => {
-    dispatch(trigger())
-  }, [dispatch])
+    dispatch(trigger(currentLanguage))
+  }, [dispatch, currentLanguage])
 
   useEffect(() => {
     setWords(home.qualities.map((quality) => quality.value))

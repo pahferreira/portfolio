@@ -1,16 +1,18 @@
 import API from 'services/API'
 import { TState as THomeState } from 'types/home'
 
-export const getHomeContent = async (): Promise<THomeState | undefined> => {
+export const getHomeContent = async (
+  currentLanguage: string
+): Promise<THomeState | undefined> => {
   try {
     const { data } = await API.post('/graphql', {
       query: `
         query {
           home {
-            top_message: top_message_pt
-            bottom_message: bottom_message_pt
+            top_message: top_message_${currentLanguage}
+            bottom_message: bottom_message_${currentLanguage}
             qualities {
-              value: value_pt
+              value: value_${currentLanguage}
             }
           }
         }

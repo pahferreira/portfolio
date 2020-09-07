@@ -17,10 +17,11 @@ const sleep = (milliseconds: number) => {
 const Home: FC = () => {
   const [activeWordIndex, setActiveWordIndex] = useState<number>(0)
   const [wordToShow, setwordToShow] = useState<string>('')
-  const [isTyping, setIsTyping] = useState(true)
+  const [isTyping, setIsTyping] = useState(false)
   const [words, setWords] = useState<Array<string>>([])
   const dispatch = useDispatch()
   const home = useSelector<TStore, THomeState>((state) => state.home)
+  const [triggerEffect, setTriggerEffect] = useState(true)
 
   useEffect(() => {
     dispatch(trigger())
@@ -33,6 +34,7 @@ const Home: FC = () => {
   const typeAndErase = useCallback(
     async (word: string = '') => {
       // Typing
+      setTriggerEffect(false)
       setIsTyping(true)
       for (let i = 0; i < word.length; i++) {
         await sleep(TYPING_DELAY)
@@ -50,13 +52,16 @@ const Home: FC = () => {
       setIsTyping(false)
       await sleep(NEXT_WORD)
       setActiveWordIndex((activeWordIndex + 1) % words.length)
+      setTriggerEffect(true)
     },
     [words, activeWordIndex]
   )
 
   useEffect(() => {
-    typeAndErase(words[activeWordIndex])
-  }, [activeWordIndex, typeAndErase, words])
+    if (words.length > 0 && triggerEffect) {
+      typeAndErase(words[activeWordIndex])
+    }
+  }, [activeWordIndex, typeAndErase, words, triggerEffect])
 
   return (
     <Container>

@@ -15,6 +15,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import Desktop from './Desktop'
 import Mobile from './Mobile'
 import theme from 'utils/theme'
+import { LanguageProvider } from 'hooks/useLanguage'
+import { Provider } from 'react-redux'
+import store from 'storage'
 
 describe('About Me Screen', () => {
   it('Component Section Render', () => {
@@ -99,22 +102,40 @@ describe('About Me Screen', () => {
 
   it('Mobile Screen', () => {
     const mobileScreen = render(
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Mobile greeting="Test" description="Test" title="Test" image="" />
-        </Router>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <LanguageProvider>
+            <Router>
+              <Mobile
+                greeting="Test"
+                description="Test"
+                title="Test"
+                image=""
+              />
+            </Router>
+          </LanguageProvider>
+        </ThemeProvider>
+      </Provider>
     )
     expect(mobileScreen).toBeTruthy()
   })
 
   it('Desktop Screen', () => {
     const desktopScreen = render(
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Desktop greeting="Test" description="Test" title="Test" image="" />
-        </Router>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <LanguageProvider>
+            <Router>
+              <Desktop
+                greeting="Test"
+                description="Test"
+                title="Test"
+                image=""
+              />
+            </Router>
+          </LanguageProvider>
+        </ThemeProvider>
+      </Provider>
     )
     expect(desktopScreen).toBeTruthy()
   })

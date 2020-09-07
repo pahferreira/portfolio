@@ -5,6 +5,9 @@ import { ThemeProvider } from 'styled-components'
 import theme from 'utils/theme'
 import NotFound from './index'
 import { Container } from './styled'
+import { LanguageProvider } from 'hooks/useLanguage'
+import { Provider } from 'react-redux'
+import store from 'storage'
 
 describe('NotFound Screen', () => {
   it('Component Container Render', () => {
@@ -18,11 +21,15 @@ describe('NotFound Screen', () => {
 
   it('Render Screen', () => {
     const homepage = render(
-      <ThemeProvider theme={theme}>
-        <Router>
-          <NotFound />
-        </Router>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <LanguageProvider>
+            <Router>
+              <NotFound />
+            </Router>
+          </LanguageProvider>
+        </ThemeProvider>
+      </Provider>
     )
     expect(homepage).toBeTruthy()
   })

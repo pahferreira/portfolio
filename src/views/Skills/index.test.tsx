@@ -8,6 +8,7 @@ import { SectionsContainer, Container } from './styled'
 import Section from './Section'
 import { Provider } from 'react-redux'
 import store from 'storage'
+import { LanguageProvider } from 'hooks/useLanguage'
 
 describe('Skills Screen', () => {
   it('Component SectionsContainer Render', () => {
@@ -55,9 +56,11 @@ describe('Skills Screen', () => {
     const homepage = render(
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <Router>
-            <Skills />
-          </Router>
+          <LanguageProvider>
+            <Router>
+              <Skills />
+            </Router>
+          </LanguageProvider>
         </ThemeProvider>
       </Provider>
     )

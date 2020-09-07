@@ -9,15 +9,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { TState as TAboutState } from 'types/about'
 import { TStore } from 'types/storage'
 import { trigger } from 'storage/ducks/about'
+import { useLanguage } from 'hooks/useLanguage'
 
 const About: FC = () => {
   const matches = useMediaQuery('(max-width: 960px)')
   const dispatch = useDispatch()
   const about = useSelector<TStore, TAboutState>((state) => state.about)
+  const { currentLanguage } = useLanguage()
 
   useEffect(() => {
-    dispatch(trigger())
-  }, [dispatch])
+    dispatch(trigger(currentLanguage))
+  }, [dispatch, currentLanguage])
 
   return (
     <>

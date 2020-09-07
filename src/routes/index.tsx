@@ -5,12 +5,14 @@ import paths from './paths'
 import TRoute from 'types/router'
 import { trigger } from 'storage/ducks/layout'
 import { useDispatch } from 'react-redux'
+import { useLanguage } from 'hooks/useLanguage'
 
 const RouterContainer: FC = () => {
   const dispatch = useDispatch()
+  const { currentLanguage } = useLanguage()
   useEffect(() => {
-    dispatch(trigger())
-  }, [dispatch])
+    dispatch(trigger(currentLanguage))
+  }, [dispatch, currentLanguage])
 
   return (
     <Switch>

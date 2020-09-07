@@ -1,11 +1,13 @@
 import { call, all, takeLatest, put } from 'redux-saga/effects'
 import { Types, request, fulfill, success } from '../ducks/skills'
 import { getSkillsContent } from 'services/Skills'
+import { TAction } from 'types/storage'
 
-function* loadSkillsContent() {
+function* loadSkillsContent(action: TAction) {
   yield put(request())
   try {
-    const data = yield call(getSkillsContent)
+    const { currentLanguage } = action.payload
+    const data = yield call(getSkillsContent, currentLanguage)
     if (data) {
       yield put(success(data))
     }

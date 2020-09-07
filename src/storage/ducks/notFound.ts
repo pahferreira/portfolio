@@ -1,27 +1,24 @@
+import { TState } from 'types/notFound'
 import { TAction } from 'types/storage'
-import { TState } from 'types/about'
 
 // Action Types
 export const Types = {
-  TRIGGER: 'ABOUT/TRIGGER',
-  REQUEST: 'ABOUT/REQUEST',
-  SUCCESS: 'ABOUT/SUCCESS',
-  FULFILL: 'ABOUT/FULFILL',
+  TRIGGER: 'NOT_FOUND/TRIGGER',
+  REQUEST: 'NOT_FOUND/REQUEST',
+  SUCCESS: 'NOT_FOUND/SUCCESS',
+  FULFILL: 'NOT_FOUND/FULFILL',
 }
 
 // Initial State
 const initialState: TState = {
-  section_title: '',
   title: '',
-  greeting: '',
-  description: '',
-  picture: {
-    url: '',
-  },
+  subtitle: '',
+  message: '',
+  url_label: '',
 }
 
 // Reducer
-export default (state: TState = initialState, action: TAction): TState => {
+export default function (state: TState = initialState, action: TAction) {
   switch (action.type) {
     case Types.REQUEST:
       return {

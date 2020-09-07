@@ -39,9 +39,10 @@ export default (state: TState = initialState, action: TAction): TState => {
 }
 
 // Actions
-export const trigger = () => {
+export const trigger = (currentLanguage: string) => {
   return {
     type: Types.TRIGGER,
+    payload: { currentLanguage },
   }
 }
 

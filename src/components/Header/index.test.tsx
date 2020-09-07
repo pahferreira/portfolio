@@ -6,16 +6,19 @@ import theme from 'utils/theme'
 import Header from './index'
 import { Provider } from 'react-redux'
 import store from 'storage'
+import { LanguageProvider } from 'hooks/useLanguage'
 
 describe('Header Tests', () => {
   it('Render', () => {
     const header = render(
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <Router>
-            <Header />
-          </Router>
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider theme={theme}>
+            <Router>
+              <Header />
+            </Router>
+          </ThemeProvider>
+        </LanguageProvider>
       </Provider>
     )
     expect(header).toBeTruthy()

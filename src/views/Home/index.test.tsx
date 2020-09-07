@@ -7,6 +7,7 @@ import Home from './index'
 import { Container, Cursor } from './styled'
 import { Provider } from 'react-redux'
 import store from 'storage'
+import { LanguageProvider } from 'hooks/useLanguage'
 
 describe('Homepage Screen', () => {
   it('Component Container Render', () => {
@@ -31,11 +32,13 @@ describe('Homepage Screen', () => {
   it('Render Screen', () => {
     const homepage = render(
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <Router>
-            <Home />
-          </Router>
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider theme={theme}>
+            <Router>
+              <Home />
+            </Router>
+          </ThemeProvider>
+        </LanguageProvider>
       </Provider>
     )
     expect(homepage).toBeTruthy()

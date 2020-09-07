@@ -7,6 +7,9 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media screen and (max-width: 360px) {
+    padding: 0 5px;
+  }
 `
 
 const blink = ({ theme }: { theme: Theme }) => keyframes`

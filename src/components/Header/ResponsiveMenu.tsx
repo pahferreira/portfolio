@@ -7,7 +7,7 @@ import {
   LanguageOption,
   MenuOverlay,
 } from './styled'
-import MenuIcon from '@material-ui/icons/Menu'
+import { AiOutlineMenu } from 'react-icons/ai'
 import { useLocation } from 'react-router-dom'
 import { TLanguage, TLink } from 'types/layout'
 
@@ -30,7 +30,7 @@ const ResponsiveMenu: FC<Props> = (props: Props) => {
   return (
     <>
       <MenuButton onClick={() => setOpen((prevState: boolean) => !prevState)}>
-        <MenuIcon />
+        <AiOutlineMenu size={24} />
       </MenuButton>
       <MenuOverlay open={open} onClick={handleClick} />
       <MenuContainer open={open}>

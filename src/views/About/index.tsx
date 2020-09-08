@@ -22,28 +22,26 @@ const About: FC = () => {
   }, [dispatch, currentLanguage])
 
   return (
-    <>
-      <Container>
-        <Content>
-          <SectionTitle>{about.section_title}</SectionTitle>
-          {matches ? (
-            <Mobile
-              greeting={about.greeting}
-              title={about.title}
-              description={about.description}
-              image={about.picture.url}
-            />
-          ) : (
-            <Desktop
-              greeting={about.greeting}
-              title={about.title}
-              description={about.description}
-              image={about.picture.url}
-            />
-          )}
-        </Content>
-      </Container>
-    </>
+    <Container>
+      <Content>
+        <SectionTitle>{about.section_title}</SectionTitle>
+        {matches ? (
+          <Mobile
+            greeting={about.greeting}
+            title={about.title}
+            description={about.description}
+            image={about.picture.url}
+          />
+        ) : (
+          <Desktop
+            greeting={about.greeting}
+            title={about.title}
+            description={about.description}
+            image={about.picture.url}
+          />
+        )}
+      </Content>
+    </Container>
   )
 }
 

@@ -28,20 +28,18 @@ const Skills: FC = () => {
   }, [skills.sections])
 
   return (
-    <>
-      <Container>
-        <Content>
-          <SectionTitle>{skills.section_title}</SectionTitle>
-          <FadeAnimation activateAnimation={triggerAnimation}>
-            <SectionsContainer>
-              {skills.sections.map((section, index) => (
-                <Section section={section} key={index} />
-              ))}
-            </SectionsContainer>
-          </FadeAnimation>
-        </Content>
-      </Container>
-    </>
+    <Container>
+      <Content>
+        <SectionTitle>{skills.section_title}</SectionTitle>
+        <FadeAnimation activateAnimation={triggerAnimation}>
+          <SectionsContainer>
+            {skills.sections.map((section, index) => (
+              <Section section={section} key={index} />
+            ))}
+          </SectionsContainer>
+        </FadeAnimation>
+      </Content>
+    </Container>
   )
 }
 

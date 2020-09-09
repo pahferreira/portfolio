@@ -17,19 +17,22 @@ import Text from 'components/Text'
 import { useSelector } from 'react-redux'
 import { TState as TProjectsState } from 'types/projects'
 import { TStore } from 'types/storage'
+import TransitionWrapper from './TransitionWrapper'
 
 type Props = {
   project: TProject
+  index: number
 }
+
 const Projects: FC<Props> = (props: Props) => {
-  const { project } = props
+  const { project, index } = props
   const { tech_label, repo_label, live, gallery } = useSelector<
     TStore,
     TProjectsState
   >((state) => state.projects)
 
   return (
-    <>
+    <TransitionWrapper first={index === 0}>
       <ProjectContainer>
         <ProjectContent>
           <Title margin="0 0 10px">{project.title}</Title>
@@ -74,7 +77,7 @@ const Projects: FC<Props> = (props: Props) => {
         <ProjectImage source={project.cover_image.url} />
       </ProjectContainer>
       <Separator />
-    </>
+    </TransitionWrapper>
   )
 }
 

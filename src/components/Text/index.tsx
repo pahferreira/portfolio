@@ -12,6 +12,7 @@ const Text = styled.p<TextProps>`
   margin: 2px 0;
   letter-spacing: 1px;
   @media screen and (max-width: 475px) {
+    overflow-wrap: anywhere;
     text-align: left;
   }
 `

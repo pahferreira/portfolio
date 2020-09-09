@@ -25,7 +25,6 @@ export const Content = styled.div`
 `
 
 export const ProjectsContainer = styled.div`
-  margin-top: 30px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -39,6 +38,9 @@ export const ProjectContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
+  @media screen and (max-width: 750px) {
+    flex-direction: column-reverse;
+  }
 `
 
 export const ProjectContent = styled.div`
@@ -46,6 +48,9 @@ export const ProjectContent = styled.div`
   align-items: flex-start;
   flex-direction: column;
   width: 55%;
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
 `
 
 type ImageProps = {
@@ -56,12 +61,23 @@ export const ProjectImage = styled.div<ImageProps>`
   width: 40%;
   background-image: url(${({ source }) => source});
   height: 100%;
-  min-height: 360px;
+  height: 360px;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
   background-repeat: no-repeat;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
+  @media screen and (max-width: 750px) {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+  }
+  @media screen and (max-width: 570px) {
+    height: 200px;
+  }
+  @media screen and (max-width: 400px) {
+    height: 150px;
+  }
 `
 
 export const GalleryContainer = styled.div`
@@ -90,6 +106,7 @@ export const Row = styled.div`
   align-items: flex-start;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   margin: 6px 0 0;
 `
@@ -107,5 +124,17 @@ export const Separator = styled.div`
   height: 10px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.lightPrimary};
-  margin: 40px 0 60px;
+  margin-top: 40px;
+`
+
+type ProjectWrapperProps = {
+  entered?: boolean
+}
+export const ProjectWrapper = styled.div<ProjectWrapperProps>`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: ${({ entered }) => (entered ? 1 : 0)};
+  transition: opacity 300ms;
+  padding-top: 100px;
 `

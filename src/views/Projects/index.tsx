@@ -24,8 +24,8 @@ const Projects: FC = () => {
       <Content>
         <SectionTitle>{section_title}</SectionTitle>
         <ProjectsContainer>
-          {projects.map((project: TProject) => (
-            <Project project={project} key={project.id} />
+          {projects.map((project: TProject, index: number) => (
+            <Project project={project} key={project.id} index={index} />
           ))}
         </ProjectsContainer>
       </Content>

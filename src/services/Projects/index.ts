@@ -28,6 +28,7 @@ export const getProjectsContent = async (
             }
             gallery {
               url
+              provider_metadata
             }
           }
         }

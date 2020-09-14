@@ -101,6 +101,17 @@ export const GalleryImage = styled.div<ImageProps>`
   margin-right: 5%;
 `
 
+export const GalleryVideo = styled.div`
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const Row = styled.div`
   display: flex;
   align-items: flex-start;

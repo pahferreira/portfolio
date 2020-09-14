@@ -50,7 +50,7 @@ export const MenuOverlay = styled.div<MenuContainerProps>`
   z-index: ${({ open }) => (open ? 1 : -1)};
   height: 107vh;
   position: absolute !important;
-  background-color: rgba(17, 17, 17, 0.6);
+  background-color: ${({ theme }) => theme.colors.overlay};
   opacity: ${({ open }) => (open ? 1 : 0)};
   transition: all 0.5s ease-in-out;
 `

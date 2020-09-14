@@ -21,6 +21,9 @@ export type TProject = {
 
 export type TImage = {
   url: string
+  provider_metadata: {
+    resource_type: string
+  }
 }
 
 export type TProjectsResponse = {

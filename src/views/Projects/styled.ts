@@ -99,6 +99,9 @@ export const GalleryImage = styled.div<ImageProps>`
   background-repeat: no-repeat;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   margin-right: 5%;
+  @media screen and (max-width: 750px) {
+    margin: 0 10px 10px 0;
+  }
 `
 
 export const GalleryVideo = styled.div`
@@ -110,6 +113,9 @@ export const GalleryVideo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 750px) {
+    margin: 0 10px 10px 0;
+  }
 `
 
 export const Row = styled.div`

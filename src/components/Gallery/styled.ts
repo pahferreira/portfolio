@@ -34,16 +34,38 @@ export const Content = styled.div`
   height: 80%;
   width: 100%;
   z-index: 1;
+  @media screen and (max-width: 575px) {
+    padding: 0;
+  }
 `
 
 export const ImageElement = styled.img`
   width: 70%;
   height: auto;
+  @media screen and (max-width: 790px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 575px) {
+    width: 100%;
+  }
 `
 
 export const VideoElement = styled.video`
   width: 70%;
   height: auto;
+  @media screen and (max-width: 790px) {
+    width: 100%;
+  }
 `
 
-export const Navigator = styled.div``
+type NavigatorWrapperProps = {
+  position?: 'left' | 'right'
+}
+export const NavigatorWrapper = styled.div<NavigatorWrapperProps>`
+  @media screen and (max-width: 790px) {
+    position: absolute;
+    bottom: 5%;
+    left: ${({ position }) => position === 'left' && '5%'};
+    right: ${({ position }) => position === 'right' && '5%'};
+  }
+`

@@ -6,6 +6,7 @@ import {
   ImageElement,
   VideoElement,
   Header,
+  NavigatorWrapper,
 } from './styled'
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from 'react-icons/ai'
 
@@ -76,19 +77,23 @@ const Gallery: FC<Props> = (props: Props) => {
         />
       </Header>
       <Content>
-        <AiOutlineLeft
-          size={40}
-          color="#E4E4A8"
-          style={{ cursor: 'pointer' }}
-          onClick={() => handleNavigation(ENavigationActions.BACK)}
-        />
+        <NavigatorWrapper position="left">
+          <AiOutlineLeft
+            size={40}
+            color="#E4E4A8"
+            style={{ cursor: 'pointer' }}
+            onClick={() => handleNavigation(ENavigationActions.BACK)}
+          />
+        </NavigatorWrapper>
         {_renderElement()}
-        <AiOutlineRight
-          size={40}
-          color="#E4E4A8"
-          style={{ cursor: 'pointer' }}
-          onClick={() => handleNavigation(ENavigationActions.NEXT)}
-        />
+        <NavigatorWrapper position="right">
+          <AiOutlineRight
+            size={40}
+            color="#E4E4A8"
+            style={{ cursor: 'pointer' }}
+            onClick={() => handleNavigation(ENavigationActions.NEXT)}
+          />
+        </NavigatorWrapper>
       </Content>
     </Container>
   )

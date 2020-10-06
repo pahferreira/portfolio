@@ -8,6 +8,9 @@ export const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+  @media screen and (min-width: 1600px) {
+    margin-top: 10%;
+  }
 `
 
 export const AboutContent = styled.div`
@@ -23,6 +26,9 @@ export const AboutContent = styled.div`
   @media screen and (max-width: 1024px) {
     width: 60%;
   }
+  @media screen and (min-width: 1600px) {
+    padding: 40px;
+  }
 `
 
 type ImageProps = {
@@ -37,6 +43,9 @@ export const Image = styled.div<ImageProps>`
   background-repeat: no-repeat;
   position: relative;
   left: 50%;
+  @media screen and (min-width: 1600px) {
+    height: 500px;
+  }
 `
 
 export const MobileSection = styled.div`

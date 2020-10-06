@@ -9,11 +9,14 @@ body {
   font-family: Nunito, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
 }
   #root {
     height: 100%;
     overflow: hidden;
     box-sizing: border-box;
+    max-width: 1600px;
   }
   a {
     color: inherit;

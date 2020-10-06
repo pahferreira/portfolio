@@ -10,6 +10,9 @@ export const SectionsContainer = styled.div`
   @media screen and (max-width: 960px) {
     flex-direction: column;
   }
+  @media screen and (min-width: 1600px) {
+    margin-top: 10%;
+  }
 `
 
 export const Container = styled.div`

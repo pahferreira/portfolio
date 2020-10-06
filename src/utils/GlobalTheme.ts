@@ -13,10 +13,11 @@ body {
   justify-content: center;
 }
   #root {
+    width: 100%;
     height: 100%;
     overflow: hidden;
     box-sizing: border-box;
-    max-width: 1600px;
+    max-width: 1920px;
   }
   a {
     color: inherit;

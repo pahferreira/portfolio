@@ -25,7 +25,11 @@ enum ENavigationActions {
 const Gallery: FC<Props> = (props: Props) => {
   const { visible, gallery, activeIndex, setVisible } = props
   const [currentElement, setCurrentElement] = useState<TImage | null>(null)
-  const [index, setIndex] = useState(activeIndex)
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    setIndex(activeIndex)
+  }, [activeIndex])
 
   useEffect(() => {
     setCurrentElement(gallery[0])

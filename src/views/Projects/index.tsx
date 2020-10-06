@@ -8,8 +8,10 @@ import { trigger } from 'storage/ducks/projects'
 import { useLanguage } from 'hooks/useLanguage'
 import Project from './Project'
 import Gallery from 'components/Gallery'
+import { useMediaQuery } from '@material-ui/core'
 
 const Projects: FC = () => {
+  const matches = useMediaQuery('(max-width: 900px)')
   const { currentLanguage } = useLanguage()
   const dispatch = useDispatch()
   const [showGallery, setShowGallery] = useState(false)
@@ -49,7 +51,7 @@ const Projects: FC = () => {
             <Project
               project={project}
               key={project.id}
-              first={index === 0}
+              first={index === 0 || matches}
               onClickGallery={handleGallery}
             />
           ))}

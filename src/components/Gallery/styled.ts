@@ -40,21 +40,16 @@ export const Content = styled.div`
 `
 
 export const ImageElement = styled.img`
-  width: 70%;
-  height: auto;
-  @media screen and (max-width: 790px) {
-    width: 90%;
-  }
-  @media screen and (max-width: 575px) {
-    width: 100%;
-  }
+  width: auto;
+  height: 100%;
 `
 
 export const VideoElement = styled.video`
-  width: 70%;
-  height: auto;
+  width: 50%;
+  height: 100%;
   @media screen and (max-width: 790px) {
     width: 100%;
+    height: 90%;
   }
 `
 

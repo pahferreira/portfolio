@@ -7,6 +7,7 @@ import homeSaga from './home'
 import aboutSaga from './about'
 import skillsSaga from './skills'
 import notFoundSaga from './notFound'
+import projectsSaga from './projects'
 
 export default function* rootSaga() {
   yield all([
@@ -16,5 +17,6 @@ export default function* rootSaga() {
     fork(aboutSaga),
     fork(skillsSaga),
     fork(notFoundSaga),
+    fork(projectsSaga),
   ])
 }

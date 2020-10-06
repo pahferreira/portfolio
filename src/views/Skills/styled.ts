@@ -11,7 +11,7 @@ export const SectionsContainer = styled.div`
     flex-direction: column;
   }
   @media screen and (min-width: 1600px) {
-    margin-top: 10%;
+    margin-top: 5%;
   }
 `
 

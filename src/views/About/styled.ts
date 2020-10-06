@@ -9,7 +9,7 @@ export const Section = styled.div`
   justify-content: space-between;
   position: relative;
   @media screen and (min-width: 1600px) {
-    margin-top: 10%;
+    margin-top: 5%;
   }
 `
 

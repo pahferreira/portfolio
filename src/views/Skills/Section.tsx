@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Container } from './styled'
+import { Container, Block } from './styled'
 import Title from 'components/Title'
 import Subtitle from 'components/Subtitle'
 import Text from 'components/Text'
@@ -16,9 +16,13 @@ const IdeaAndPlanning: FC<Props> = (props: Props) => {
   return (
     <Container>
       <Title textTransform="uppercase">{section.title}</Title>
-      <Text>{section.description}</Text>
+      <Block>
+        <Text>{section.description}</Text>
+      </Block>
       <Subtitle>{section.part.title}</Subtitle>
-      <Text>{section.part.description}</Text>
+      <Block>
+        <Text>{section.part.description}</Text>
+      </Block>
       <Subtitle>{section.tools_title}</Subtitle>
       {section.tools.map((tool: TTool, index: number) => (
         <>

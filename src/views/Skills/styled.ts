@@ -29,3 +29,7 @@ export const Container = styled.div`
     align-self: flex-start;
   }
 `
+
+export const Block = styled.div`
+min-height: 55px;
+`

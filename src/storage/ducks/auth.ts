@@ -1,12 +1,12 @@
-import { TState } from '../../types/auth'
-import { TAction } from '../../types/storage'
+import { TState } from 'types/auth'
+import { TAction } from 'types/storage'
 
 // ACTION TYPES
 export const Types = {}
 
 // INITIAL STATE
 const initialState: TState = {
-  user: {}
+  user: {},
 }
 
 // REDUCER

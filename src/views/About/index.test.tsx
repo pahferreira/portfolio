@@ -15,6 +15,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import Desktop from './Desktop'
 import Mobile from './Mobile'
 import theme from 'utils/theme'
+import { LanguageProvider } from 'hooks/useLanguage'
+import { Provider } from 'react-redux'
+import store from 'storage'
 
 describe('About Me Screen', () => {
   it('Component Section Render', () => {
@@ -40,7 +43,7 @@ describe('About Me Screen', () => {
   it('Component Image Render', () => {
     const image = render(
       <ThemeProvider theme={theme}>
-        <Image />
+        <Image image="" />
       </ThemeProvider>
     )
     expect(image).toBeTruthy()
@@ -70,7 +73,7 @@ describe('About Me Screen', () => {
   it('Component MobileImage Render', () => {
     const mobileImage = render(
       <ThemeProvider theme={theme}>
-        <MobileImage />
+        <MobileImage image="" />
       </ThemeProvider>
     )
     expect(mobileImage).toBeTruthy()
@@ -99,22 +102,40 @@ describe('About Me Screen', () => {
 
   it('Mobile Screen', () => {
     const mobileScreen = render(
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Mobile />
-        </Router>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <LanguageProvider>
+            <Router>
+              <Mobile
+                greeting="Test"
+                description="Test"
+                title="Test"
+                image=""
+              />
+            </Router>
+          </LanguageProvider>
+        </ThemeProvider>
+      </Provider>
     )
     expect(mobileScreen).toBeTruthy()
   })
 
   it('Desktop Screen', () => {
     const desktopScreen = render(
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Desktop />
-        </Router>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <LanguageProvider>
+            <Router>
+              <Desktop
+                greeting="Test"
+                description="Test"
+                title="Test"
+                image=""
+              />
+            </Router>
+          </LanguageProvider>
+        </ThemeProvider>
+      </Provider>
     )
     expect(desktopScreen).toBeTruthy()
   })

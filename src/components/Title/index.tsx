@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 type TitleProps = {
   textTransform?: string
+  margin?: string
 }
 
 const Title = styled.p<TitleProps>`
-  margin: 20px 0;
+  margin: ${({ margin }) => (margin ? margin : '10px 0')};
   font-family: ${({ theme }) => theme.fontFamilies.nunito};
   font-size: ${({ theme }) => theme.fontSizes.title};
   color: ${({ theme }) => theme.colors.secondary};

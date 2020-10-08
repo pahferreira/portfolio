@@ -5,6 +5,9 @@ import { ThemeProvider } from 'styled-components'
 import theme from 'utils/theme'
 import Home from './index'
 import { Container, Cursor } from './styled'
+import { Provider } from 'react-redux'
+import store from 'storage'
+import { LanguageProvider } from 'hooks/useLanguage'
 
 describe('Homepage Screen', () => {
   it('Component Container Render', () => {
@@ -28,11 +31,15 @@ describe('Homepage Screen', () => {
 
   it('Render Screen', () => {
     const homepage = render(
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Home />
-        </Router>
-      </ThemeProvider>
+      <Provider store={store}>
+        <LanguageProvider>
+          <ThemeProvider theme={theme}>
+            <Router>
+              <Home />
+            </Router>
+          </ThemeProvider>
+        </LanguageProvider>
+      </Provider>
     )
     expect(homepage).toBeTruthy()
   })

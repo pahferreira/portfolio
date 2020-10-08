@@ -1,33 +1,60 @@
 import React, { FC, useState } from 'react'
-import { MenuButton, MenuContainer, MenuOption } from './styled'
-import MenuIcon from '@material-ui/icons/Menu'
-
-type Option = {
-  url: string
-  label: string
-}
+import {
+  MenuButton,
+  MenuContainer,
+  MenuOption,
+  Separator,
+  LanguageOption,
+  MenuOverlay,
+} from './styled'
+import { AiOutlineMenu } from 'react-icons/ai'
+import { useLocation } from 'react-router-dom'
+import { TLanguage, TLink } from 'types/layout'
 
 type Props = {
-  options: Array<Option>
+  options: Array<TLink>
+  languages: Array<TLanguage>
+  currentLanguage: string
+  setCurrentLanguage: (language: string) => void
 }
 
 const ResponsiveMenu: FC<Props> = (props: Props) => {
-  const { options } = props
+  const { options, languages, currentLanguage, setCurrentLanguage } = props
   const [open, setOpen] = useState<boolean>(false)
+  const location = useLocation()
+
+  const handleClick = () => setOpen(false)
+
+  const handleLanguageClick = (language: string) => setCurrentLanguage(language)
 
   return (
     <>
       <MenuButton onClick={() => setOpen((prevState: boolean) => !prevState)}>
-        <MenuIcon />
+        <AiOutlineMenu size={24} />
       </MenuButton>
+      <MenuOverlay open={open} onClick={handleClick} />
       <MenuContainer open={open}>
-        {options.map((option: Option) => (
+        {options.map((option: TLink) => (
           <MenuOption
+            onClick={handleClick}
             key={option.label}
-            to={option.url}
-            active={window.location.pathname === option.url ? 'true' : 'false'}>
+            to={process.env.PUBLIC_URL + option.url}
+            active={
+              location.pathname === process.env.PUBLIC_URL + option.url
+                ? 'true'
+                : 'false'
+            }>
             {option.label}
           </MenuOption>
+        ))}
+        <Separator />
+        {languages.map((language: TLanguage) => (
+          <LanguageOption
+            key={language.value}
+            active={currentLanguage === language.value ? 'true' : 'false'}
+            onClick={() => handleLanguageClick(language.value)}>
+            {language.label}
+          </LanguageOption>
         ))}
       </MenuContainer>
     </>

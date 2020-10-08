@@ -2,7 +2,7 @@ name: Deployment
 on:
   push:
     branches:
-      - master
+      - dev
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,6 +21,8 @@ jobs:
         run: yarn test
       - name: Create Build to Deployment
         run: yarn build
+        env:
+          REACT_APP_MAIN_URL: ${{ secrets.REACT_APP_MAIN_URL }}
       - name: Deploy Page to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

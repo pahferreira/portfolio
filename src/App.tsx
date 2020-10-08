@@ -7,18 +7,23 @@ import store from './storage'
 import { ThemeProvider } from 'styled-components'
 import GlobalTheme from 'utils/GlobalTheme'
 import theme from 'utils/theme'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+import { LanguageProvider } from 'hooks/useLanguage'
 
 const App = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <GlobalTheme />
-        <Router>
-          <Switch>
+        <LanguageProvider>
+          <GlobalTheme />
+          <Router>
+            <Header />
             <Routes />
-          </Switch>
-        </Router>
+          </Router>
+          <Footer />
+        </LanguageProvider>
       </ThemeProvider>
     </Provider>
   )

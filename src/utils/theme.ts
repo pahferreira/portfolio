@@ -5,6 +5,7 @@ const theme = {
     primary: '#5E548E',
     secondary: '#E4E4A8',
     lightPrimary: '#322F4D',
+    overlay: 'rgba(17, 17, 17, 0.6)',
   },
   fontSizes: {
     sectionTitle: '4.0rem',

@@ -2,37 +2,25 @@ import React, { FC } from 'react'
 import { useMediaQuery } from '@material-ui/core'
 import ResponsiveMenu from './ResponsiveMenu'
 import Navbar from './Navbar'
-
-const OPTIONS = [
-  {
-    url: '/portfolio',
-    label: 'Home',
-  },
-  {
-    url: '/portfolio/about',
-    label: 'About',
-  },
-  {
-    url: '/portfolio/projects',
-    label: 'Projects',
-  },
-  {
-    url: '/portfolio/skills',
-    label: 'Skills',
-  },
-  {
-    url: '/portfolio/contact',
-    label: 'Contact',
-  },
-]
+import { useSelector } from 'react-redux'
+import { TStore } from 'types/storage'
+import { TState as TLayoutState } from 'types/layout'
+import { useLanguage } from 'hooks/useLanguage'
 
 const Header: FC = () => {
-  const matches = useMediaQuery('(max-width: 475px)')
+  const { header } = useSelector<TStore, TLayoutState>((state) => state.layout)
+  const { currentLanguage, setCurrentLanguage } = useLanguage()
+  const matches = useMediaQuery('(max-width: 570px)')
 
   return matches ? (
-    <ResponsiveMenu options={OPTIONS} />
+    <ResponsiveMenu
+      options={header.link}
+      languages={header.language}
+      currentLanguage={currentLanguage}
+      setCurrentLanguage={setCurrentLanguage}
+    />
   ) : (
-    <Navbar options={OPTIONS} />
+    <Navbar options={header.link} languages={header.language} />
   )
 }
 

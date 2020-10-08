@@ -8,6 +8,9 @@ export const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+  @media screen and (min-width: 1600px) {
+    margin-top: 5%;
+  }
 `
 
 export const AboutContent = styled.div`
@@ -23,16 +26,26 @@ export const AboutContent = styled.div`
   @media screen and (max-width: 1024px) {
     width: 60%;
   }
+  @media screen and (min-width: 1600px) {
+    padding: 40px;
+  }
 `
 
-export const Image = styled.div`
+type ImageProps = {
+  image: string
+}
+
+export const Image = styled.div<ImageProps>`
   width: 52.5%;
   height: 434px;
-  background-image: url('profile.jpeg');
+  background-image: ${({ image }) => `url(${image})`};
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   left: 50%;
+  @media screen and (min-width: 1600px) {
+    height: 500px;
+  }
 `
 
 export const MobileSection = styled.div`
@@ -58,10 +71,10 @@ export const MobileHeader = styled.div`
   }
 `
 
-export const MobileImage = styled.div`
+export const MobileImage = styled.div<ImageProps>`
   width: 200px;
   height: 200px;
-  background-image: url('profile.jpeg');
+  background-image: ${({ image }) => `url(${image})`};
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 300px;
@@ -71,10 +84,14 @@ export const MobileImage = styled.div`
     width: 50%;
     margin-right: 10%;
   }
+  @media screen and (max-width: 430px) {
+    width: 150px;
+    height: 150px;
+    margin-right: 5%;
+  }
   @media screen and (max-width: 400px) {
     width: 130px;
     height: 130px;
-    margin-right: 5%;
   }
 `
 

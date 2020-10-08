@@ -23,7 +23,7 @@ const NotFound: FC = () => {
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
       <Subtitle>{message}</Subtitle>
-      <BackLink to="/portfolio">{url_label}</BackLink>
+      <BackLink to="/">{url_label}</BackLink>
     </Container>
   )
 }

@@ -16,6 +16,9 @@ export const getAboutContent = async (
             picture {
               url
             }
+            mobile_picture {
+              url
+            }
           }
         }
       `,

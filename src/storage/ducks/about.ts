@@ -18,6 +18,9 @@ const initialState: TState = {
   picture: {
     url: '',
   },
+  mobile_picture: {
+    url: ''
+  }
 }
 
 // Reducer

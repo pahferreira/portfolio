@@ -7,4 +7,7 @@ export type TState = {
   picture: {
     url: string
   }
+  mobile_picture: {
+    url: string
+  }
 }

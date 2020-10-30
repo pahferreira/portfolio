@@ -30,7 +30,7 @@ const About: FC = () => {
             greeting={about.greeting}
             title={about.title}
             description={about.description}
-            image={about.picture.url}
+            image={about.mobile_picture.url}
           />
         ) : (
           <Desktop

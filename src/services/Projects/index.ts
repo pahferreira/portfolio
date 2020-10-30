@@ -16,7 +16,9 @@ export const getProjectsContent = async (
             live
             gallery: gallery_${currentLanguage}
           }
-          projects {
+          projects(where:{
+            visible: true
+          }) {
             id
             title
             description: description_${currentLanguage}
